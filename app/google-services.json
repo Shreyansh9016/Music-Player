@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "22078745269",
+    "project_id": "musickly-2b49a",
+    "storage_bucket": "musickly-2b49a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22078745269:android:2f048a2f6c4a2dc62e2cfc",
+        "android_client_info": {
+          "package_name": "com.example.musickly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqb-wnAyCJbjp7FHm5Jl2hNDlMmodHaEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
