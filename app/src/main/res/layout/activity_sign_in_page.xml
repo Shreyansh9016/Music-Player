@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/background"
+    android:background="@color/light_black"
     tools:context=".SignInPage">
 
     <!-- Welcome Text -->
@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="80dp"
         android:text="Welcome Back,"
-        android:textColor="@color/black"
+        android:textColor="#FF7043"
         android:textSize="45sp"
         android:textStyle="bold" />
 
@@ -28,7 +28,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="Sign in to continue!"
-        android:textColor="#474B46"
+        android:textColor="#9E4D2B"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -39,12 +39,14 @@
         android:layout_marginTop="100dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        app:boxStrokeColor="#1480D5"
-        android:textColorHint="@color/black"
+        app:boxStrokeColor="#FF7043"
+        android:textColorHint="#FF7043"
         app:boxBackgroundMode="none"
         app:hintAnimationEnabled="true"
         app:startIconDrawable="@drawable/username"
-        app:startIconTint="@color/black"
+        app:startIconTint="#FF7043"
+        app:hintTextColor="#FF7043"
+        app:hintTextAppearance="@style/CustomHintStyle"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -52,29 +54,31 @@
             android:layout_height="wrap_content"
             android:id="@+id/usernamee"
             android:textStyle="normal"
-            android:textColor="@color/black"
+            android:textColor="#FF7043"
             android:hint="Username"
-            android:textColorHint="@color/black"/>
+            android:textColorHint="#FF7043"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_margin="10dp"
-        app:boxStrokeColor="#1480D5"
+        app:boxStrokeColor="#FF7043"
         android:layout_gravity="center"
-        android:textColorHint="@color/black"
+        android:textColorHint="#FF7043"
         app:boxBackgroundMode="none"
         app:startIconDrawable="@drawable/lock"
-        app:startIconTint="@color/black"
+        app:startIconTint="#FF7043"
         app:endIconMode="password_toggle"
-        app:endIconTint="@color/black"
+        app:endIconTint="#FF7043"
+        app:hintTextColor="#FF7043"
+        app:hintTextAppearance="@style/CustomHintStyle"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pass"
-            android:textColor="@color/black"
+            android:textColor="#FF7043"
             android:inputType="textPassword"
             android:hint="Password"
             android:textStyle="normal"
@@ -91,10 +95,7 @@
         android:layout_marginTop="20dp"
         android:textSize="18sp"
         android:text="I agree to all T&amp;C"
-        android:textColor="@color/black" />
-
-
-
+        android:textColor="#FF7043" />
 
     <!-- Sign Up Button -->
     <Button
@@ -103,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="#FF7043"
         android:text="Sign In"
-        android:textColor="@color/white" />
+        android:textColor="#FFFFFF" />
 </LinearLayout>

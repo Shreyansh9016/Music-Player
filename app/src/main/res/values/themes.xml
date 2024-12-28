@@ -5,6 +5,17 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="CircularImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="CustomHintStyle" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">18sp</item> <!-- Larger text size -->
+        <item name="android:textColor">@color/black</item> <!-- Black color -->
+        <item name="android:textStyle">bold</item> <!-- Optional: Make it bold -->
+    </style>
+
+
 
     <style name="Theme.Musickly" parent="Base.Theme.Musickly" />
 </resources>

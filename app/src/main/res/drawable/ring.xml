@@ -1,0 +1,7 @@
+<!-- res/drawable/circular_ring.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#00000000" /> <!-- Transparent center -->
+    <stroke android:color="#e85011" android:width="5dp" /> <!-- Ring color and thickness -->
+    <size android:width="260dp" android:height="260dp" /> <!-- Size of the ring -->
+    <corners android:radius="130dp"/> <!-- Make the edges circular -->
+</shape>

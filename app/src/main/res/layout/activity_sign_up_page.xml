@@ -6,17 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@color/light_black"
     tools:context=".SignUpPage">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Account,"
-        android:textColor="@color/black"
-        android:textSize="45dp"
+        android:textColor="#FF7043"
+        android:textSize="42dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="60dp"
         android:textStyle="bold"
         />
     <TextView
@@ -24,22 +24,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Sign up to get started!"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:layout_marginStart="15dp"
         android:textStyle="bold"
-        android:textColor="#474B46"
+        android:textColor="#9E4D2B"
         />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="300dp"
         android:layout_gravity="center"
-
         android:layout_marginTop="30dp"
-        app:boxStrokeColor="#1480D5"
-        android:textColorHint="@color/black"
+        app:boxStrokeColor="#FF7043"
+        android:textColorHint="#FF7043"
         app:boxBackgroundMode="none"
         app:startIconDrawable="@drawable/name"
-        app:startIconTint="@color/black"
+        app:startIconTint="#FF7043"
+        app:hintTextColor="#FF7043"
+        app:hintTextAppearance="@style/CustomHintStyle"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -47,7 +48,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/name"
             android:textStyle="normal"
-            android:textColor="@color/black"
+            android:textColor="#FF7043"
             android:inputType="text"
             android:hint="Name" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -56,12 +57,14 @@
         android:layout_width="300dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        app:boxStrokeColor="#1480D5"
-        android:textColorHint="@color/black"
+        app:boxStrokeColor="#FF7043"
+        android:textColorHint="#FF7043"
         app:boxBackgroundMode="none"
         app:hintAnimationEnabled="true"
         app:startIconDrawable="@drawable/username"
-        app:startIconTint="@color/black"
+        app:startIconTint="#FF7043"
+        app:hintTextColor="#FF7043"
+        app:hintTextAppearance="@style/CustomHintStyle"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -69,56 +72,62 @@
             android:layout_height="wrap_content"
             android:id="@+id/username"
             android:textStyle="normal"
-            android:textColor="@color/black"
+            android:textColor="#FF7043"
             android:hint="Username"
-            android:textColorHint="@color/black"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="300dp"
-        android:layout_margin="10dp"
-        app:boxStrokeColor="#1480D5"
-        android:layout_gravity="center"
-        android:textColorHint="@color/black"
-        app:boxBackgroundMode="none"
-        app:startIconDrawable="@drawable/lock"
-        app:startIconTint="@color/black"
-        app:endIconMode="password_toggle"
-        app:endIconTint="@color/black"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/password"
-            android:textColor="@color/black"
-            android:inputType="textPassword"
-            android:hint="Password"
-            android:textStyle="normal"
+            android:textColorHint="#FF7043"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="300dp"
         android:layout_margin="10dp"
-        app:boxStrokeColor="#1480D5"
+        app:boxStrokeColor="#FF7043"
         android:layout_gravity="center"
-        android:textColorHint="@color/black"
+        android:textColorHint="#FF7043"
+        app:boxBackgroundMode="none"
+        app:startIconDrawable="@drawable/lock"
+        app:startIconTint="#FF7043"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#FF7043"
+        app:hintTextColor="#FF7043"
+        app:hintTextAppearance="@style/CustomHintStyle"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/password"
+            android:textColor="#FF7043"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:textStyle="normal"
+            android:textColorHint="#FF7043"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="#FF7043"
+        android:layout_gravity="center"
+        android:textColorHint="#FF7043"
+        app:hintTextColor="#FF7043"
+        app:hintTextAppearance="@style/CustomHintStyle"
         app:boxBackgroundMode="none"
         app:startIconDrawable="@drawable/email"
-        app:startIconTint="@color/black"
+        app:startIconTint="#FF7043"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/email"
-            android:textColor="@color/black"
+            android:textColor="#FF7043"
             android:textStyle="normal"
             android:inputType="textEmailAddress"
-            android:hint="Email" />
+            android:hint="Email"
+            android:textColorHint="#FF7043"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
@@ -126,7 +135,7 @@
         android:id="@+id/checkbtn"
         android:layout_height="wrap_content"
         android:text="I agree to all T&amp;C"
-        android:textColor="@color/black"
+        android:textColor="#FF7043"
         android:textSize="18sp"
         android:layout_gravity="center"
         android:gravity="center"
@@ -138,19 +147,19 @@
         android:layout_gravity="center"
         android:id="@+id/btn"
         android:text="Sign Up"
-        android:textColor="@color/white"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#131A13"
+        android:backgroundTint="#FF7043"
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/signbtn"
-        android:textColor="#B31212"
+        android:textColor="#FF7043"
         android:textSize="20dp"
         android:text="If already registered click here"
         />
-
 
 </LinearLayout>

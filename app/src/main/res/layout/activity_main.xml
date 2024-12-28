@@ -1,29 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#000"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <TextView
+        android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="Welcome Shreyansh,"
-        android:id="@+id/tvWelcome"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
+        android:textColor="#e85011"
+        android:textSize="36sp"
         android:textStyle="bold"
-        />
+        android:fontFamily="sans-serif-condensed-light"
+        android:contentDescription="Welcome message" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#e85011"
+        android:alpha="0.8" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:id="@+id/recyclerView"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        android:scrollbars="vertical"
+        android:background="#000"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:overScrollMode="never" />
 
 </LinearLayout>

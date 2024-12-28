@@ -10,12 +10,15 @@ android {
 
     defaultConfig {
         applicationId = "com.example.musickly"
-        minSdk = 24
+        minSdk = 21 // Consider lowering if you need wider reach
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        renderscriptTargetApi = 21 // Use assignment operator (=)
+        renderscriptSupportModeEnabled = true
     }
 
     buildTypes {
@@ -52,11 +55,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.material.v190)
+    // Remove RenderScript if you're not using it
+    // implementation("androidx.renderscript:renderscript:1.0.0")
+
+    implementation(libs.squareup.picasso) // Picasso dependency
 
 
-    implementation (libs.retrofit)
-//    // Gson Converter for Retrofit
+    implementation(libs.retrofit)
     implementation(libs.retrofit2.converter.gson)
-//    //picasso for loading images in my Image View from link
-    implementation (libs.squareup.picasso)
 }

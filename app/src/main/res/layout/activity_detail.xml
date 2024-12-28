@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backgroundview"
+    android:orientation="vertical"
+    android:background="@drawable/img_3"
+    tools:context=".DetailActivity">
+
+
+    <!-- Now Playing Text -->
+    <TextView
+        android:id="@+id/nowPlayingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Now Playing"
+        android:layout_gravity="center"
+        android:textColor="#e85011"
+        android:layout_marginTop="55dp"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <!-- Circular Image -->
+    <FrameLayout
+        android:id="@+id/ringLayout"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/ring"> <!-- Apply the rotating ring drawable here -->
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircularImage"
+            app:srcCompat="@drawable/img_1" />
+    </FrameLayout>
+
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Song Details -->
+            <TextView
+                android:id="@+id/songname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="20dp"
+                android:text="Song Name"
+                android:textColor="#e85011"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/songwriter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Artist / Album Name"
+                android:textColor="#9E4D2B"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- SeekBar -->
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginHorizontal="16dp"
+                android:progressTint="#e85011"
+                android:thumbTint="#e85011"
+                android:trackTint="#e85011"
+                android:padding="8dp" />
+
+            <!-- Control Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="center"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/stop"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:contentDescription="Stop Button"
+                    app:srcCompat="@drawable/baseline_stop_24" />
+
+                <ImageView
+                    android:id="@+id/previous"
+                    android:layout_width="64dp"
+                    android:padding="10dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:contentDescription="Previous Button"
+                    app:srcCompat="@drawable/baseline_skip_previous_24" />
+
+                <ImageView
+                    android:id="@+id/play"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:contentDescription="Play Button"
+                    app:srcCompat="@drawable/baseline_play_arrow_24" />
+
+                <ImageView
+                    android:id="@+id/next"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:contentDescription="Next Button"
+                    app:srcCompat="@drawable/baseline_skip_next_24" />
+
+                <ImageView
+                    android:id="@+id/loop"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:contentDescription="Loop Button"
+                    app:srcCompat="@drawable/baseline_loop_24" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -2,6 +2,7 @@
 
 import android.annotation.SuppressLint
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -30,7 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory
         val name = intent.getStringExtra(SignInPage.KEY2) ?: ""
         val firstName = name.split(" ")[0] // Get the first part (first name)
         val welcomesTex = findViewById<TextView>(R.id.tvWelcome)
-        welcomesTex.text = "Welcome $firstName"
+        welcomesTex.text = "Welcome $firstName ,"
 
 
 
@@ -51,7 +52,20 @@ import retrofit2.converter.gson.GsonConverterFactory
                 myAdapter = MyAdapter(this@MainActivity,dataList)
                 myRecyclerView.adapter = myAdapter
                 myRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-                Log.d("TAG: onResponse","onResponse: "+response.body())
+                myAdapter.setItemClickListener(object : MyAdapter.onItemClickListener{
+                    override fun onItemClick(position: Int) {
+                        Log.d("TAG: onItemClick","onItemClick: $position")
+                        val intent = Intent(this@MainActivity,DetailActivity::class.java)
+                        intent.putExtra("img",dataList[position].album.cover)
+                        intent.putExtra("songName",dataList[position].title)
+                        intent.putExtra("artist",dataList[position].artist.name)
+                        intent.putExtra("album",dataList[position].album.title)
+                        intent.putExtra("rank",dataList[position].rank.toString())
+                        intent.putExtra("song",dataList[position].preview)
+                        startActivity(intent)
+                    }
+                })
+//                Log.d("TAG: onResponse","onResponse: "+response.body())
             }
 
             override fun onFailure(call: Call<MyData>, t: Throwable) {

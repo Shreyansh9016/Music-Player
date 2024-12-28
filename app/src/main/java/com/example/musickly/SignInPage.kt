@@ -1,5 +1,6 @@
 package com.example.musickly
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -37,15 +38,23 @@ class SignInPage : AppCompatActivity() {
             val uniqueID = username.text.toString()
             val uniquePass = password.text.toString()
 
-            if(uniqueID.isNotEmpty() && checkbox.isChecked)
+            if(uniqueID.isNotEmpty() && checkbox.isChecked && uniquePass.isNotEmpty())
             {
 
                 readData(uniqueID,uniquePass)
 
             }
+            else if(uniquePass.isEmpty() && uniqueID.isEmpty())
+            {
+                Toast.makeText(this,"Please enter username and password", Toast.LENGTH_SHORT).show()
+            }
             else if(uniqueID.isEmpty())
             {
-                Toast.makeText(this,"Please enter username password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please enter username ", Toast.LENGTH_SHORT).show()
+            }
+            else if(uniquePass.isEmpty())
+            {
+                Toast.makeText(this,"Please enter password", Toast.LENGTH_SHORT).show()
             }
             else
             {
@@ -60,6 +69,11 @@ class SignInPage : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         val checkbox = findViewById<CheckBox>(R.id.checkbtn)
 
+        val loadingDialog = ProgressDialog(this).apply {
+            setMessage("Fetching user data...")
+            setCancelable(true)
+            show()
+        }
         // Querying for the user with the given uniqueID
         databaseReference.child(uniqueID).get().addOnSuccessListener {
             clearFields()
@@ -81,6 +95,7 @@ class SignInPage : AppCompatActivity() {
             }
 
         }.addOnFailureListener {
+            loadingDialog.dismiss()
             Toast.makeText(this, "Error occurred. Please try again.", Toast.LENGTH_SHORT).show()
         }
     }

@@ -15,6 +15,11 @@
     <color name="base_color_dark">#339999</color> <!-- Darker variant -->
     <color name="base_color_darkest">#006666</color> <!-- Even darker shade -->
     <color name="base_color_lightest">#cceeee</color> <!-- Very light shade -->
+    <color name="loop_active">#fff</color> <!-- Green for active -->
+    <color name="loop_inactive">#e85011</color> <!-- White for inactive -->
+    <color name="light_black">#2D2D2D</color> <!-- Light black color -->
+    <color name="orange">#e85011</color> <!-- Orange color -->
+
 
 
 </resources>
