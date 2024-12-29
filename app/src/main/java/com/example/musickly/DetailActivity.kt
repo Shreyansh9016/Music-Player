@@ -167,6 +167,26 @@ class DetailActivity : AppCompatActivity() {
                 }
             }
         }
+        // Find Views for Time
+        val startTimeView = findViewById<TextView>(R.id.startTime)
+        val endTimeView = findViewById<TextView>(R.id.endTime)
+
+// Set total time for the song (endTime)
+        endTimeView.text = formatTime(totalTime)
+
+// Initialize the Runnable for SeekBar updates
+        updateSeekBarRunnable = object : Runnable {
+            override fun run() {
+                if (mediaPlayer.isPlaying) {
+                    // Update SeekBar progress
+                    seekBar.progress = mediaPlayer.currentPosition
+                    // Update current time (startTime)
+                    startTimeView.text = formatTime(mediaPlayer.currentPosition)
+                    handler.postDelayed(this, 1000)
+                }
+            }
+        }
+
     }
 
     private fun startUpdatingSeekBar() {
@@ -206,6 +226,11 @@ class DetailActivity : AppCompatActivity() {
         blur.forEach(allocationOut)
         allocationOut.copyTo(outputBitmap)
         return outputBitmap
+    }
+    private fun formatTime(ms: Int): String {
+        val minutes = ms / 1000 / 60
+        val seconds = ms / 1000 % 60
+        return String.format("%02d:%02d", minutes, seconds)
     }
 
 
