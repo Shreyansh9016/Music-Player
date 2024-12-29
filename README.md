@@ -18,5 +18,5 @@ Technologies Used:
 - Used libraries like RetroFit for API interface and Pisasso for image application and enhancing UI.
 - Android Studio: Development environment for building the app.
 
-- ![WhatsApp Image 2024-12-29 at 02 26 26_ee34c8e1](https://github.com/user-attachments/assets/b80d4116-5618-415c-93f7-003c722252a2)
-- ![WhatsApp Image 2024-12-29 at 02 26 26_38c5dda6](https://github.com/user-attachments/assets/c10b5454-9031-4649-bfe6-172919b72005)
+<img src="![WhatsApp Image 2024-12-29 at 02 26 26_7fb2504a](https://github.com/user-attachments/assets/22648a94-e95f-4cf8-be71-5a303b8ef196)" width="100" height="100" />
+
