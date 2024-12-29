@@ -32,7 +32,7 @@
                 android:gravity="center"
                 android:text="1."
                 android:textSize="20sp"
-                android:textColor="#e85011"
+                android:textColor="#99CCCC"
                 android:layout_marginEnd="1dp" />
 
             <ImageView
@@ -58,7 +58,7 @@
                     android:text="Song Title"
                     android:textSize="15sp"
                     android:textStyle="bold"
-                    android:textColor="#E65518"
+                    android:textColor="#99CCCC"
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:contentDescription="Song Title" />
@@ -66,7 +66,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#e85011" />
+                    android:background="#99CCCC" />
 
                 <TextView
                     android:id="@+id/musicWriter"
@@ -75,7 +75,7 @@
                     android:text="Song Writer"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:textColor="#9E4D2B"
+                    android:textColor="#628E8E"
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:contentDescription="Song Writer" />
@@ -89,7 +89,7 @@
                 android:layout_marginEnd="12dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#e85011"
+                android:textColor="#99CCCC"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:layout_marginTop="2dp"

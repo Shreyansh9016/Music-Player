@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/backgroundview"
     android:orientation="vertical"
-    android:background="@drawable/img_3"
+    android:background="@drawable/img_2"
     tools:context=".DetailActivity">
 
 
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="Now Playing"
         android:layout_gravity="center"
-        android:textColor="#e85011"
+        android:textColor="#99CCCC"
         android:layout_marginTop="55dp"
         android:textSize="35sp"
         android:textStyle="bold" />
@@ -61,7 +61,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="20dp"
                 android:text="Song Name"
-                android:textColor="#e85011"
+                android:textColor="#99CCCC"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -72,21 +72,51 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Artist / Album Name"
-                android:textColor="#9E4D2B"
+                android:textColor="#628E8E"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <!-- SeekBar -->
-            <SeekBar
-                android:id="@+id/seekBar"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:layout_marginHorizontal="16dp"
-                android:progressTint="#e85011"
-                android:thumbTint="#e85011"
-                android:trackTint="#e85011"
-                android:padding="8dp" />
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                >
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:progressTint="#99CCCC"
+                    android:thumbTint="#99CCCC"
+                    android:trackTint="#99CCCC"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/startTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0:00"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/seekBar"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/endTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0:00"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/seekBar"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <!-- Control Buttons -->
             <LinearLayout

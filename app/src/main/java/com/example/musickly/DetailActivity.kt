@@ -1,14 +1,21 @@
 package com.example.musickly
 
 import android.animation.ObjectAnimator
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.renderscript.Allocation
+import android.renderscript.RenderScript
+import android.renderscript.ScriptIntrinsicBlur
 import android.view.animation.LinearInterpolator
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -17,6 +24,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import com.squareup.picasso.Picasso
 import java.util.Timer
+import android.renderscript.Element
+import kotlin.coroutines.CoroutineContext
 
 class DetailActivity : AppCompatActivity() {
 
@@ -32,6 +41,8 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_detail)
+
+        val backgroundView = findViewById<LinearLayout>(R.id.backgroundview)
 
         // Retrieve intent extras
         val img = intent.getStringExtra("img")
@@ -76,6 +87,18 @@ class DetailActivity : AppCompatActivity() {
         })
         mediaPlayer.start()
         playButton.setImageResource(R.drawable.baseline_pause_24)
+        // Set up RenderScript
+        val rs = RenderScript.create(this)
+
+        // Load the background image as a Bitmap
+        val originalBitmap = BitmapFactory.decodeResource(resources, R.drawable.img_2)
+
+        // Apply blur effect on the Bitmap
+        val blurredBitmap = blurBitmap(rs, originalBitmap)
+
+        // Set the blurred bitmap as the background of the LinearLayout
+        backgroundView.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+        backgroundView.background = BitmapDrawable(resources, blurredBitmap)
 
         // to rotate the frame
 
@@ -172,47 +195,22 @@ class DetailActivity : AppCompatActivity() {
         stopUpdatingSeekBar()
         timer.cancel()
     }
+
+    private fun blurBitmap(rs: RenderScript, original: Bitmap): Bitmap {
+        val outputBitmap = Bitmap.createBitmap(original.width, original.height, Bitmap.Config.ARGB_8888)
+        val allocationIn = Allocation.createFromBitmap(rs, original)
+        val allocationOut = Allocation.createFromBitmap(rs, outputBitmap)
+        val blur = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs))
+        blur.setRadius(25f) // Blur intensity
+        blur.setInput(allocationIn)
+        blur.forEach(allocationOut)
+        allocationOut.copyTo(outputBitmap)
+        return outputBitmap
+    }
+
+
+
+
 }
-
-
-// // inside fun oncreate
-//        val backgroundView = findViewById<LinearLayout>(R.id.backgroundview)
-        //// Set up RenderScript
-        //val rs = RenderScript.create(this)
-        //
-        //// Load the background image as a Bitmap
-        //val originalBitmap = BitmapFactory.decodeResource(resources, R.drawable.img_3)
-        //
-        //// Apply blur effect on the Bitmap
-        //val blurredBitmap = blurBitmap(rs, originalBitmap)
-        //
-        //// Set the blurred bitmap as the background of the LinearLayout
-        //backgroundView.setBackgroundColor(android.graphics.Color.TRANSPARENT)
-        //backgroundView.background = BitmapDrawable(resources, blurredBitmap)
-
-// // out of oncreate
-//private fun blurBitmap(rs: RenderScript, original: Bitmap): Bitmap {
-//    // Create a mutable Bitmap to store the result
-//    val outputBitmap = Bitmap.createBitmap(original.width, original.height, Bitmap.Config.ARGB_8888)
-//
-//    // Create an Allocation from the original Bitmap
-//    val allocationIn = Allocation.createFromBitmap(rs, original)
-//    val allocationOut = Allocation.createFromBitmap(rs, outputBitmap)
-//
-//    // Create the ScriptIntrinsicBlur object
-//    val blur = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs))
-//
-//    // Set the blur radius (you can adjust this value)
-//    blur.setRadius(25f) // Adjust the radius to control the blur intensity
-//
-//    // Apply the blur effect
-//    blur.setInput(allocationIn)
-//    blur.forEach(allocationOut)
-//
-//    // Copy the blurred result back to the output Bitmap
-//    allocationOut.copyTo(outputBitmap)
-//
-//    return outputBitmap
-//}
 
 

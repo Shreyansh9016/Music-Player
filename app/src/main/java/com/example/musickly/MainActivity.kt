@@ -62,6 +62,7 @@ import retrofit2.converter.gson.GsonConverterFactory
                         intent.putExtra("album",dataList[position].album.title)
                         intent.putExtra("rank",dataList[position].rank.toString())
                         intent.putExtra("song",dataList[position].preview)
+                        intent.putExtra("time",dataList[position].duration)
                         startActivity(intent)
                     }
                 })

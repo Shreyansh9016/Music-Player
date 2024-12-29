@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
+    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -17,7 +17,7 @@
         android:layout_marginTop="40dp"
         android:text="Welcome Shreyansh,"
         android:layout_marginStart="16dp"
-        android:textColor="#e85011"
+        android:textColor="#000"
         android:textSize="36sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed-light"
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="20dp"
-        android:background="#e85011"
+        android:background="#000"
         android:alpha="0.8" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -38,7 +38,6 @@
         android:clipToPadding="false"
         android:paddingBottom="16dp"
         android:scrollbars="vertical"
-        android:background="#000"
         android:layout_marginTop="16dp"
         android:padding="8dp"
         android:overScrollMode="never" />
