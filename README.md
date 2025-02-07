@@ -1,3 +1,6 @@
+Username : admin
+Password : admin
+
 "Musickly"
 
 - Musickly is a feature-rich music app designed to deliver a seamless listening experience, allowing users to discover, play, and manage their favorite music with ease. 
@@ -17,6 +20,7 @@ Technologies Used:
 - API Integration: For streaming music and fetching track data.
 - Used libraries like RetroFit for API interface and Pisasso for image application and enhancing UI.
 - Android Studio: Development environment for building the app.
+- Music API used - Deezer API
 
 <img src="https://github.com/user-attachments/assets/ece4bd7c-1b8e-4680-b445-281217eef00e" width="200" height="350" />
 <img src="https://github.com/user-attachments/assets/1d044ef4-fe74-406d-830a-d6ed7f02ece4" width="200" height="350" />
